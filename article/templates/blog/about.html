@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- header -->
+{% include "blog/header.html" %}
+
+<!-- 导航栏 -->
+{% include "blog/navbar.html" %}
+
+<body>
+
+<main class="container mt-4">
+    <h1>关于我</h1>
+    <p>您好！我是一名充满热情的Python开发工程师。</p>
+
+    <p>
+        我熟练掌握Python语言，并且对C语言也有很好的掌握，此外还了解C++、Java和JavaScript等多种编程语言。
+    </p>
+
+</main>
+
+{% include "blog/footer.html" %}
+
+<script src="{% static 'blog/js/jquery-3.5.1.slim.min.js' %}"></script>
+<script src="{% static 'blog/js/popper.min.js' %}"></script>
+<script src="{% static 'bootstrap/4.5.3/js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

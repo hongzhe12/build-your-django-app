@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- header -->
+{% include "blog/header.html" %}
+
+<!-- 导航栏 -->
+{% include "blog/navbar.html" %}
+
+<body>
+
+
+<!-- 文章列表 -->
+<main class="container mt-4">
+    <h1>最新文章</h1>
+    <div class="row">
+        {% for article in articles %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><a
+                                href="{% url 'article:article_detail' article.slug %}">{{ article.title }}</a></h5>
+                        <p class="card-text">{{ article.summary }}</p>
+                        <p class="card-text"><small class="text-muted">发表于 {{ article.published_date }}</small></p>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>暂无文章。</p>
+        {% endfor %}
+    </div>
+
+    <!-- 分页 -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if articles.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1">&laquo; 第一页</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ articles.previous_page_number }}">上一页</a>
+                </li>
+            {% endif %}
+
+            <li class="page-item disabled"><span
+                    class="page-link">第 {{ articles.number }} 页，共 {{ articles.paginator.num_pages }} 页</span></li>
+
+            {% if articles.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ articles.next_page_number }}">下一页</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ articles.paginator.num_pages }}">最后一页
+                    &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</main>
+
+<!-- 底部信息 -->
+{% include "blog/footer.html" %}
+
+<!-- 引入Bootstrap的JavaScript文件 -->
+<script src="{% static 'blog/js/jquery-3.5.1.slim.min.js' %}"></script>
+<script src="{% static 'blog/js/popper.min.js' %}"></script>
+<script src="{% static 'bootstrap/4.5.3/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

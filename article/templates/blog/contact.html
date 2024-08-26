@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- header -->
+{% include "blog/header.html" %}
+
+<!-- 导航栏 -->
+{% include "blog/navbar.html" %}
+
+<body>
+
+<main class="container mt-4">
+    <h1>联系我</h1>
+    <b><p>电子邮件：hongzhe2022@163.com</p></b>
+
+</main>
+
+{% include "blog/footer.html" %}
+
+<script src="{% static 'blog/js/jquery-3.5.1.slim.min.js' %}"></script>
+<script src="{% static 'blog/js/popper.min.js' %}"></script>
+<script src="{% static 'bootstrap/4.5.3/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

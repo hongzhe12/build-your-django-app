@@ -1,0 +1,3 @@
+chcp 65001
+echo 重新构建...
+python -m build

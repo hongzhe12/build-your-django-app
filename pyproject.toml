@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-polls" # 修改为实际名称
+version = "0.1" # 修改为实际版本号
+dependencies = [
+    "django>=X.Y",  # 需要修改为实际版本号
+    "xx>=X.Y",  # 需要将其他依赖一并添加
+]
+description = "A Django app to conduct web-based polls." # 修改为实际描述
+readme = "README.rst"
+requires-python = ">= 3.10" # 修改为实际项目python版本
+authors = [
+    {name = "Your Name", email = "yourname@example.com"}, # 修改为实际姓名和邮箱
+]
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: X.Y",  # 修改为实际django版本
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",   # 根据需要修改版本兼容情况
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+
+[project.urls]
+Homepage = "https://www.example.com/" # 修改为GitHub项目地址或其他平台项目地址
